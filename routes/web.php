@@ -27,9 +27,6 @@ Route::resource('chirp',ChirpController::class)
     ->only(['index','store'])
     ->middleware(['auth','verified']);
 
-
-// Route::get('sending-queue-emails', [TestQueueEmails::class,'sendTestEmails']);   
-
 // Route::middleware('auth')->group(function () {
 //     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
 //     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -37,4 +34,3 @@ Route::resource('chirp',ChirpController::class)
 // });
 
 require __DIR__.'/auth.php';
-

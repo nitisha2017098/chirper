@@ -8,11 +8,10 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\support\Facades\Mail;
 
 class TestHelloEmail extends Mailable
 {
-    use Queueable, SerializesModels, Mail;
+    use Queueable, SerializesModels;
 
     /**
      * Create a new message instance.
@@ -22,9 +21,10 @@ class TestHelloEmail extends Mailable
         //
     }
 
-    public function build(){
-        return $this->view('view.mail.testEmails');
- }
+    public function build()
+    {
+        return $this->view('mail.testEmails');
+    }
 
     /**
      * Get the message envelope.
@@ -50,4 +50,3 @@ class TestHelloEmail extends Mailable
         return [];
     }
 }
-
